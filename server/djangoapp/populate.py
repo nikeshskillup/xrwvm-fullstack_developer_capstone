@@ -54,7 +54,7 @@ def initiate():
       "car_make":car_make_instances[4]},
         # Add more CarModel instances as needed
     ]
-      for data in car_model_data:
+    for data in car_model_data:
         CarModel.objects.create(
             name=data['name'],
             car_make=data['car_make'],
