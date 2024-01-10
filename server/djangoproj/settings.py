@@ -32,12 +32,11 @@ ALLOWED_HOSTS = ['localhost', 'https://nikeshkr-8000.theiadockernext-0-labs-prod
                  'https://nikeshkr-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai']
 CSRF_TRUSTED_ORIGINS = ['https://nikeshkr-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai', 
                         'https://nikeshkr-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai']
-
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [],
 }
 
-#Application definition
+# Application definition
 
 INSTALLED_APPS = [
     'djangoapp.apps.DjangoappConfig',
@@ -47,7 +46,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
 ]
 
 MIDDLEWARE = [
@@ -63,9 +61,9 @@ ROOT_URLCONF = 'djangoproj.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates', 
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR,'frontend/static'),
+            os.path.join(BASE_DIR, 'frontend/static'),
             os.path.join(BASE_DIR, 'frontend/build'),
             os.path.join(BASE_DIR, 'frontend/build/static'),
         ],
@@ -96,8 +94,8 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-    'NAME':
-    'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
         'NAME':
