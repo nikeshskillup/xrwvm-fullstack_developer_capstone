@@ -47,7 +47,8 @@ def registration(request):
 
     try:
         User.objects.get(username=username)
-        return JsonResponse({"userName": username, "error": "Already Registered"})
+        return JsonResponse({"userName": username, 
+                             "error": "Already Registered"})
     except User.DoesNotExist:
         logger.debug(f"{username} is a new user")
         user = User.objects.create_user(
@@ -75,7 +76,8 @@ def get_dealer_reviews(request, dealer_id):
         reviews = get_request(endpoint)
 
         for review_detail in reviews:
-            sentiment_result = analyze_review_sentiments(review_detail["review"])
+            sentiment_result = 
+            analyze_review_sentiments(review_detail["review"])
             review_detail["sentiment"] = sentiment_result["sentiment"]
 
         return JsonResponse({"status": 200, "reviews": reviews})
@@ -104,7 +106,8 @@ def add_review(request):
             return JsonResponse({"status": 200})
         except Exception as e:
             logger.error(f"Error posting review: {e}")
-            return JsonResponse({"status": 401, "message": "Error in posting review"})
+            return JsonResponse({"status": 401, 
+                                 "message": "Error in posting review"})
     return JsonResponse({"status": 403, "message": "Unauthorized"})
 
 
